@@ -7,12 +7,9 @@ async function scrape(url) {
     await page.click('span[data-testid="search"]')
     await page.type("._2_1wd.copyable-text.selectable-text", "name of the contact");//put name of the contact
     await page.keyboard.press("Enter");
-    // await page.waitForSelector('span [title="My Jio"]')
-    // const target = await page.$('span [title="My Jio"]')
-    //await target.click('span [title="8077179601"]')
     await page.waitForSelector('div[data-tab="6"]', { visible: true })
     const inp = await page.$('div[data-tab="6"]');
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 50; i++) {
         await inp.type("magic")
         await page.keyboard.press("Enter")
     }
